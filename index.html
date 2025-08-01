@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <header class="flex justify-between items-center px-6 md:px-12 py-4 max-w-7xl mx-auto">
+        <div class="text-2xl font-bold text-gray-900">AZ</div>
+        <nav class="flex space-x-8 text-gray-800 font-medium">
+            <a class="hover:text-blue-600" href="#home">Home</a>
+            <a class="hover:text-blue-600" href="#our-profil">Our Profil</a>
+            <a class="hover:text-blue-600" href="#portfolio">Portfolio</a>
+            <a class="hover:text-blue-600" href="#message-us">Message Us</a>
+        </nav>
+    </header>
+    <hr>
+    <main>
+        <section class="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-24 py-20 gap-10" id="home">
+            <div class="md:w-1/2 space-y-4">
+                <h1 class="text-3xl font-bold text-gray-900">Welcome <span id="welcome-speech"></span> to Our Website</h1>
+                <p class="text-lg text-gray-600">I’m learning to become a front-end developer. I enjoy building simple websites using HTML, CSS, and Tailwind CSS.</p>
+            </div>
+
+            <div class="md:w-1/2 flex justify-center">
+                <img src="image/foto.png" alt="image" class="max-w-full h-auto">
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="min-h-screen flex flex-col md:flex-row items-center justify-between px-6 md:px-24 py-20 gap-10 bg-white" id="our-profil">
+
+            <div class="md:w-1/2 space-y-4">
+                <p class="text-sm text-gray-500 tracking-widest">MY NAME IS</p>
+                <h1 class="text-5xl font-bold text-gray-900">Achmad Zulfikar</h1>
+                <p class="text-lg text-gray-600">
+                    I'm currently learning web development, focusing on front-end technologies like HTML, CSS, and Tailwind CSS.
+                    I enjoy turning ideas into simple, clean websites. This website is part of my learning journey. Thanks for visiting!
+                </p>
+            </div>
+
+            <div class="md:w-1/2 flex justify-center">
+                <img src="image/men-vector.jpeg" alt="image" class="max-w-full h-auto">
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="portfolio" class="py-16 px-6 bg-gray-50">
+            <h2 class="text-3xl font-bold text-center mb-8">My Portfolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <img src="image/landing page.jpeg" alt="Landing Page Preview" class="rounded-md mb-4">
+                <h3 class="text-xl font-semibold">Landing Page</h3>
+                <p class="text-sm text-gray-600">A simple and responsive landing page built using Tailwind CSS.</p>
+                <a href="#home" class="text-blue-500 hover:underline mt-2 inline-block">View Code</a>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <img src="image/website portfolio.png" alt="Portfolio Website Preview" class="rounded-md mb-4">
+                <h3 class="text-xl font-semibold">Portfolio Website</h3>
+                <p class="text-sm text-gray-600">A modern portfolio website with clean design and responsiveness.</p>
+                <a href="#home" class="text-blue-500 hover:underline mt-2 inline-block">View Code</a>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <img src="image/ui ux design.jpg" alt="UI Design Preview" class="rounded-md mb-4">
+                <h3 class="text-xl font-semibold">UI Design</h3>
+                <p class="text-sm text-gray-600">User interface design mockups created using Figma and exported to web format.</p>
+                <a href="#home" class="text-blue-500 hover:underline mt-2 inline-block">View Code</a>
+            </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="min-h-[500px] p-6" id="message-us">
+            <h1 class="text-2xl font-bold mb-4">Message Us</h1>
+            <div class="flex flex-col md:flex-row gap-6">
+                <form class="flex-1 space-y-4">
+                <div>
+                    <label for="name" class="block text-sm font-medium mb-1">Name</label>
+                    <input class="border rounded-[4px] px-[8px] py-[4px]" type="text" id="name-input" name="name">
+
+                    <br>
+
+                    <label for="email" class="block text-sm font-medium mb-1">Email</label>
+                    <input class="border rounded-[4px] px-[8px] py-[4px]" type="email" id="email-input" name="email">
+
+                    <br>
+
+                    <label for="phone-number" class="block text-sm font-medium mb-1">Phone Number</label>
+                    <input class="border rounded-[4px] px-[8px] py-[4px]" type="tel" id="phone-input" name="phone-number">
+
+                    <br>
+
+                    <label for="message-input" class="block text-sm font-medium mb-1">Message</label>
+                    <textarea class="border rounded-[4px] px-[8px] py-[4px] w-full" id="message-input" name="message" rows="4"></textarea>
+
+                    <br>
+
+                    <button class="border bg-blue-400 text-white rounded-[4px] px-[8px] py-[4px] hover:bg-blue-600" type="button" onclick="validateForm();">Send Message</button>
+                </div>
+            </form>
+
+            <aside class="flex-1 bg-gray-100 rounded p-4 text-lg flex flex-col justify-center items-center text-center">
+                <p class="text-gray-500" id="result-name"></p>
+                <p class="text-gray-500" id="result-email"></p>
+                <p class="text-gray-500" id="result-phone"></p>
+                <p class="text-gray-500" id="result-message"></p>
+            </aside>
+            </div>
+
+        </section>
+    </main>
+
+    <hr>
+
+    <footer class="text-center p-[20px] bg-gray-200">
+        <p>&copy; 2025 Achmad Zulfikar. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
